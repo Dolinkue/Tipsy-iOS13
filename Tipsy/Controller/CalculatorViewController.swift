@@ -65,7 +65,7 @@ class CalculatorViewController: UIViewController {
         
         calculate.calculateSplit(bill: bill2, percen: porcentaje, splitt: split2)
         
-        
+        self.performSegue(withIdentifier: "goToResoult", sender: self)
         
         
     }
@@ -76,6 +76,16 @@ class CalculatorViewController: UIViewController {
         
         
         
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToResoult" {
+            let destinationVC = segue.destination as! ResultsViewController
+            destinationVC.calculateValue = calculate.getValue()
+            destinationVC.split3 = splitNumberLabel.text
+            
+        }
     }
 
 

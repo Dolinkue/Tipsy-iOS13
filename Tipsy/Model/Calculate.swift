@@ -20,9 +20,9 @@ struct Calculate {
         
     }
     
-    func getBMIValue() -> String {
+    func getValue() -> String {
         
-        let billSplit = String(format: "%.1f", totalBill ?? 0.0)
+        let billSplit = String(format: "%.2f", totalBill ?? 0.0)
         return billSplit
 
         
